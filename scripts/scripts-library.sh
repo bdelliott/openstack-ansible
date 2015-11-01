@@ -328,6 +328,11 @@ trap "exit_fail ${LINENO} $?" ERR
 ## Determine OS --------------------------------------------------------------
 # Determine the operating system of the base host
 # Adds the $HOST_DISTRO, $HOST_VERSION, and $HOST_CODENAME bash variables.
+echo "dollar 0:"
+echo ${0}
+echo "My dirname is:"
+echo `$dirname ${0}`
+ls -l `dirname $0`
 eval "$(python $(dirname ${0})/os-detection.py)"
 echo "Detected ${HOST_DISTRO} ${HOST_VERSION} (codename: ${HOST_CODENAME})"
 
